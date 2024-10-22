@@ -38,7 +38,7 @@
                         <div class="col-md-6 mb-3">
                             <div data-mdb-input-init class="form-outline">
                                 <label class="d-flex justify-content-start mb-1" for="email">Email address</label>
-                                <input type="text" name="email" value="{{ $user->email }}" id="email" class="form-control @error('email') is-invalid @enderror" placeholder="Enter Your Email address"/>
+                                <input type="email" name="email" value="{{ $user->email }}" id="email" class="form-control @error('email') is-invalid @enderror" placeholder="Enter Your Email address"/>
                                 @error('email')
                                     <small class="text-danger d-block">
                                         {{ $message }}

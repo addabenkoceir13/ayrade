@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\TaskController as AdminTaskController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\AdminRegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\UserRegisterController;
+use App\Http\Controllers\User\TaskController;
 use App\Http\Controllers\User\UserController as UserUserController;
 use Illuminate\Support\Facades\Route;
 
@@ -38,7 +40,13 @@ Route::name('auth.')->middleware('guest')->group(function() {
 Route::get('logout', LogoutController::class)->middleware('auth')->name('auth.logout');
 Route::name('dashboard.')->prefix('dashboard')->middleware('role:admin')->group(function () {
     Route::resource('users',UserController::class)->middleware('role:admin');
+    Route::resource('tasks',AdminTaskController::class)->middleware('role:admin');
     Route::get('profile', ProfileController::class)->name('admin-profile')->middleware('role:admin');
+
+});
+
+Route::name('task.')->middleware('role:user')->group(function () {
+    Route::resource('task', TaskController::class );
 });
 
 Route::get('profile',UserUserController::class)->name('user.profile')->middleware('role:user');

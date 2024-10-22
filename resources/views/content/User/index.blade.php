@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <title>User Profile | AYRADE</title>
-</head>
-<body>
+@extends('layouts.User.app-user')
 
+@section('title', 'Profile')
+
+@section('content')
 <div class="page-content page-container" id="page-content">
     <div class="padding">
         <div class="row container d-flex justify-content-center">
@@ -63,10 +56,10 @@
                 </div>
             </div>
         </div>
-        <a href="{{ route('auth.logout') }}" class="btn btn-outline-dark">Logout</a>
     </div>
 
 </div>
+@endsection
 
-</body>
-</html>
+
+

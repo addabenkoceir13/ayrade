@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ route('dashboard.users.index') }}">AYRADE</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,14 +7,11 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ route('dashboard.users.index') }}">Users</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ route('dashboard.tasks.index') }}">Tasks</a>
+                    <a class="nav-link active" aria-current="page" href="{{ route('task.task.index') }}">Task</a>
                 </li>
             </ul>
             <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                <a class="nav-link dropdown-toggle hide-arrow" style="color: white" href="javascript:void(0);" data-bs-toggle="dropdown">
                     {{ auth()->user()->firstname .' '.  auth()->user()->lastname}}
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
@@ -37,7 +34,7 @@
                         <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="{{ route('dashboard.admin-profile') }}">
+                        <a class="dropdown-item" href="{{ route('user.profile') }}">
                         <i class="bx bx-user me-2"></i>
                         <span class="align-middle">{{ __('My Profile') }}</span>
                         </a>
